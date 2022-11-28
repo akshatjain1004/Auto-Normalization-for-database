@@ -24,6 +24,7 @@ class AutoNormalizer {
         /*
         start your code from here
         */
+       Fds[0].print();
     }
 };
 

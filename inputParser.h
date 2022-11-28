@@ -19,7 +19,7 @@ class InputParser {
         string s;
         getline(cin, s);
         for (int i = 0; i < numFds; i++) Fds[i] = getFunctionalDependency();
-        for (int i = 0; i < numFds; i++) Fds[i].print();
+        // for (int i = 0; i < numFds; i++) Fds[i].print();
     }
     FD getFunctionalDependency() {
         FD cur;
