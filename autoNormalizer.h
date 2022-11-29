@@ -21,11 +21,35 @@ class AutoNormalizer {
         Fds = _Fds;
     }
     void start() {
+        auto dm= dependancyMatrix();
+        for(int i=0;i< dm.size();i++){
+            for(int j=0;j<dm[0].size();j++){
+                cout<<dm[i][j]<<" ";
+            }
+            cout<<'\n';
+        }
         /*
         start your code from here
         */
-       Fds[0].print();
+    //    cout<<typeid(Fds[0].LHS).name();
     }
+    vector<vector<int>> dependancyMatrix(){
+        int num=0;
+        vector<vector<int>> dm(numFds,vector<int>(numAttr,0));
+        for(auto x: Fds){
+            auto left= x.LHS;
+            auto right= x.RHS;
+            for(auto y: left){
+                dm[num][y]=2;
+            }
+            for(auto y: right){
+                dm[num][y]=1;
+            }
+            num++;
+        }
+        return dm;
+    }
+
 };
 
 #endif
